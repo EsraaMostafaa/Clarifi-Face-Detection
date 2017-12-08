@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		84350AA91FD98E7900B010C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84350AA81FD98E7900B010C4 /* AppDelegate.swift */; };
-		84350AAB1FD98E7900B010C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84350AAA1FD98E7900B010C4 /* ViewController.swift */; };
+		84350AAB1FD98E7900B010C4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84350AAA1FD98E7900B010C4 /* MainVC.swift */; };
 		84350AAE1FD98E7900B010C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84350AAC1FD98E7900B010C4 /* Main.storyboard */; };
 		84350AB11FD98E7900B010C4 /* Clarifi_Face_Detection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84350AAF1FD98E7900B010C4 /* Clarifi_Face_Detection.xcdatamodeld */; };
 		84350AB31FD98E7900B010C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84350AB21FD98E7900B010C4 /* Assets.xcassets */; };
 		84350AB61FD98E7900B010C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84350AB41FD98E7900B010C4 /* LaunchScreen.storyboard */; };
+		846608501FDAEA0300D7CFD5 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466084F1FDAEA0300D7CFD5 /* TagView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84350AA51FD98E7900B010C4 /* Clarifi Face Detection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clarifi Face Detection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84350AA81FD98E7900B010C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84350AAA1FD98E7900B010C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84350AAA1FD98E7900B010C4 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		84350AAD1FD98E7900B010C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84350AB01FD98E7900B010C4 /* Clarifi_Face_Detection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clarifi_Face_Detection.xcdatamodel; sourceTree = "<group>"; };
 		84350AB21FD98E7900B010C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84350AB51FD98E7900B010C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84350AB71FD98E7900B010C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8466084F1FDAEA0300D7CFD5 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		84350AA71FD98E7900B010C4 /* Clarifi Face Detection */ = {
 			isa = PBXGroup;
 			children = (
-				84350AA81FD98E7900B010C4 /* AppDelegate.swift */,
-				84350AAA1FD98E7900B010C4 /* ViewController.swift */,
+				84350AC01FD9956C00B010C4 /* SupportFiles */,
+				84350ABF1FD9955700B010C4 /* Controller */,
+				84350ABE1FD9954500B010C4 /* View */,
+				84350ABD1FD9951700B010C4 /* Model */,
 				84350AAC1FD98E7900B010C4 /* Main.storyboard */,
-				84350AB21FD98E7900B010C4 /* Assets.xcassets */,
 				84350AB41FD98E7900B010C4 /* LaunchScreen.storyboard */,
-				84350AB71FD98E7900B010C4 /* Info.plist */,
 				84350AAF1FD98E7900B010C4 /* Clarifi_Face_Detection.xcdatamodeld */,
 			);
 			path = "Clarifi Face Detection";
+			sourceTree = "<group>";
+		};
+		84350ABD1FD9951700B010C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		84350ABE1FD9954500B010C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		84350ABF1FD9955700B010C4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84350AAA1FD98E7900B010C4 /* MainVC.swift */,
+				8466084F1FDAEA0300D7CFD5 /* TagView.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		84350AC01FD9956C00B010C4 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				84350AA81FD98E7900B010C4 /* AppDelegate.swift */,
+				84350AB21FD98E7900B010C4 /* Assets.xcassets */,
+				84350AB71FD98E7900B010C4 /* Info.plist */,
+			);
+			name = SupportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +174,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84350AAB1FD98E7900B010C4 /* ViewController.swift in Sources */,
+				84350AAB1FD98E7900B010C4 /* MainVC.swift in Sources */,
 				84350AA91FD98E7900B010C4 /* AppDelegate.swift in Sources */,
 				84350AB11FD98E7900B010C4 /* Clarifi_Face_Detection.xcdatamodeld in Sources */,
+				846608501FDAEA0300D7CFD5 /* TagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +337,7 @@
 				84350ABC1FD98E7900B010C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

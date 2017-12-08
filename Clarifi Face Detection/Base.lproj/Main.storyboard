@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="t13-OD-3kf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Face Detection-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Clarifi_Face_Detection" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,114 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="All staff picture new" translatesAutoresizingMaskIntoConstraints="NO" id="yoT-gC-sdo">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6Wx-1H-8or">
+                                <rect key="frame" x="112.5" y="258.5" width="150" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bjs-5i-XzJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
+                                        <color key="backgroundColor" red="0.72336632013320923" green="0.65797242456332983" blue="0.57515531113981677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="19"/>
+                                        <state key="normal" title="get photo ">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a3C-l1-bHP"/>
+                                            <segue destination="8hW-NF-cHR" kind="show" identifier="TagView" id="cyz-0E-pfq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuC-Tt-4sS">
+                                        <rect key="frame" x="0.0" y="90" width="150" height="60"/>
+                                        <color key="backgroundColor" red="0.72336632013320923" green="0.65797242456332983" blue="0.57515531113981677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="19"/>
+                                        <state key="normal" title="faces ">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="gcf-Du-GDJ"/>
+                                    <constraint firstAttribute="width" constant="150" id="olH-Wd-0eU"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yoT-gC-sdo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="F18-sV-GPy"/>
+                            <constraint firstItem="yoT-gC-sdo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="QYd-wB-Ear"/>
+                            <constraint firstAttribute="trailing" secondItem="yoT-gC-sdo" secondAttribute="trailing" id="R0z-Ix-ot0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yoT-gC-sdo" secondAttribute="bottom" id="V1h-MZ-eXV"/>
+                            <constraint firstItem="6Wx-1H-8or" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gb8-B1-dui"/>
+                            <constraint firstItem="6Wx-1H-8or" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ytz-Tx-sqj"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Face Detection" id="JlD-9R-MKv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1064.8" y="-559.07046476761627"/>
+        </scene>
+        <!--Tag View-->
+        <scene sceneID="5Dn-U1-dN1">
+            <objects>
+                <viewController id="8hW-NF-cHR" customClass="TagView" customModule="Clarifi_Face_Detection" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rea-na-iE1"/>
+                        <viewControllerLayoutGuide type="bottom" id="fgZ-we-2WW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qba-48-1KB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="3Mc-6Q-tvd">
+                                <rect key="frame" x="10" y="74" width="355" height="583"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Mc-6Q-tvd" firstAttribute="top" secondItem="Rea-na-iE1" secondAttribute="bottom" constant="10" id="J6E-vd-L0F"/>
+                            <constraint firstItem="fgZ-we-2WW" firstAttribute="top" secondItem="3Mc-6Q-tvd" secondAttribute="bottom" constant="10" id="Y3v-b2-TxH"/>
+                            <constraint firstItem="3Mc-6Q-tvd" firstAttribute="leading" secondItem="Qba-48-1KB" secondAttribute="leading" constant="10" id="YcO-Du-bFr"/>
+                            <constraint firstAttribute="trailing" secondItem="3Mc-6Q-tvd" secondAttribute="trailing" constant="10" id="xgg-dD-1od"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chosenImage" destination="3Mc-6Q-tvd" id="yYW-oK-W4E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6S-i9-9Je" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1760.8" y="-559.07046476761627"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Iea-68-q0K">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t13-OD-3kf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zj6-tC-J3l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
+                            <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FZ8-hn-MDL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wha-1D-BK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56.799999999999997" y="-559.07046476761627"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="All staff picture new" width="662" height="320"/>
+        <image name="background" width="300" height="168"/>
+    </resources>
 </document>
